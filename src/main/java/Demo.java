@@ -18,12 +18,12 @@ public class Demo {
 
         // serialize Collections objects
         List<String> slist = List.of("hi", "there", "tom");
-        System.out.println( "serialize List<String>: " + gson.toJson(slist) );
+        System.out.println( "\nserialized List<String>: " + gson.toJson(slist) );
 
         HashMap<String,Integer> lengthMap = new HashMap<>();
         lengthMap.put("a", 1);
         lengthMap.put("hello", 5);
-        System.out.println( "serialize Map: " + gson.toJson(lengthMap) );
+        System.out.println( "serialized Map: " + gson.toJson(lengthMap) );
 
         HashMap<Integer,List<String>> lengthToStrings = new HashMap<>();
         lengthToStrings.put(1, List.of("a", "i"));
@@ -38,6 +38,8 @@ public class Demo {
         // serialize and deserialize our own class Course
         Course c1 = new Course("cs3240", "Adv SW Dev", List.of("sherriff", "horton"), 120);
         c1.setSecretValue(5);  // note what happens to this transient field
+        System.out.println( "\nOriginal Course object: " + c1 );
+
 
         jsonString =  gson.toJson(c1);
         System.out.println( "serialized Course object: " + jsonString );
